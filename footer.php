@@ -1,10 +1,6 @@
 </body>
-
-
-
 <footer>
 
 
 </footer>
-
 </html>

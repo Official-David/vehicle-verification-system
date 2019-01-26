@@ -15,5 +15,3 @@
 <header class="text-center col-4"><a href="login_form.php"> Login/Register </a></header>
 <header class="text-center col-4"><a href="#"> Admin </a></header>
 </div><br>
-
-

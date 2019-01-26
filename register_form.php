@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
     $ref_code = rand(11000, 99000);
     $message = "You are logged in {$fname} ";
 // getting data from database
-    $sql = "INSERT INTO users_info (Ref_Code, First_Name, Last_Name, Email, Pwd) VALUES ('$ref_code', '$fname', '$lname', '$email',' ".md5($pwd)."')";
+    $sql = "INSERT INTO users_info (Ref_Code, First_Name, Last_Name, Email, Pwd) VALUES ('$ref_code', '$fname', '$lname', '$email',' " . md5($pwd) . "')";
 
     if (mysqli_query($connection, $sql)) {
         redirect_to("login_form.php");

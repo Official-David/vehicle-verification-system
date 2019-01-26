@@ -7,6 +7,7 @@ require_once("included.php");
 ?>
 
 <?php
+$email = $_SESSION['email'];
 if (isset($_POST["submit"])) {
     $phone = $_POST["Phone"];
     $addr = $_POST["addr"];
@@ -18,7 +19,9 @@ if (isset($_POST["submit"])) {
     $ed = $_POST["ed"];
 
     // getting data from database
-    $sql = "UPDATE users_info SET Phone = $phone, Addr = $addr, Vehicle_Brand = $brand, Model = $model, Chassis_Number= $chassis, Date_of_Purchase = $dop, Date_of_Registration = $dor, Expiration_Date = $ed  where email = ' ".$_SESSION['email']." ' ";
+    $sql = " UPDATE users_info SET Phone = '" . $phone . "', Adde = '" . $addr . "', Brand = '" . $brand . "', Model = '" . $model . "', Chassis_Number = '" . $chassis . "', Date_of_Purchase = '" . $dop . "', Date_of_Registration = '" . $dor . "', Expiration_Date = '" . $ed . "'  WHERE Email = '" . $email . "' ";
+
+
     if (mysqli_query($connection, $sql)) {
         redirect_to("success.php");
     } else {
@@ -48,13 +51,13 @@ if (isset($_POST["submit"])) {
 <input class="form-control" type="text" id="chas" name="chassis" required><br>
 
 <label for="Ddop">Date of purchase</label>
-<input class="form-control" type="date" id="ddop" name="dop" value=" {date()}" required><br>
+<input class="form-control" type="text" id="ddop" name="dop" required><br>
 
 <label for="Ddor">Date of registration</label>
-<input class="form-control" type="date" id="ddor" name="dor" required><br>
+<input class="form-control" type="text" id="ddor" name="dor" required><br>
 
 <label for="Eed">Expirration date</label>
-<input class="form-control" type="date" id="Eed" name="ed" required><br>
+<input class="form-control" type="text" id="Eed" name="ed" required><br>
 
 <!-- <label for="pass">Confirm Password</label>
 <input class="form-control" type="password" id="pass" name="password" required><br> -->

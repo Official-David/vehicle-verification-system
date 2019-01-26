@@ -22,7 +22,6 @@ $first_name = $_SESSION['First_Name'];
 
                                                         // }
 ?>
-
 <div class="text-center"><h2>Dashboad</h2></div> 
 <div class="text-center"><h3><?php echo "Welcome " . strtolower($first_name) . "! we are pleased to have you here." ; ?></h3></div> 
 <div class="text-center" style="color:red; text-decoration:none;"><h3><?php echo "Kindly update your profile." ; ?></h3></div><br><br><br>
@@ -30,7 +29,6 @@ $first_name = $_SESSION['First_Name'];
 
 <div class="text-center"> <a href="update.php" style="text-decoration:none;">Update your profile</a></div>
 <div class="text-center"> <a href="logout.php" style="text-decoration:none;">Log out</a></div>
-
 
 <?php
 include("footer.php");

@@ -6,17 +6,17 @@ require("config.php");
 ?>
 
 <?php
-if (isset($_POST["login"])){
+if (isset($_POST["login"])) {
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
-    $query = "SELECT * FROM users_info WHERE email = '$email' and pwd = ' ".md5($pwd)." '";
-    $result = mysqli_query($connection, $query) or die("database failed " .mysqli_error($connection));
-    if (mysqli_num_rows($result) == 1){
+    $query = "SELECT * FROM users_info WHERE email = '$email' and pwd = ' " . md5($pwd) . " '";
+    $result = mysqli_query($connection, $query) or die("database failed " . mysqli_error($connection));
+    if (mysqli_num_rows($result) == 1) {
         $_SESSION['email'] = $email;
         redirect_to("dashboard.php");
-     } else {
-         echo "invalid login credentials";
-     }
+    } else {
+        echo "invalid login credentials";
+    }
 }
 
     // $fields =  "SELECT * FROM users_info WHERE email = ' " . $_SESSION['email'] . " ' ";
@@ -26,7 +26,7 @@ if (isset($_POST["login"])){
     //         $_SESSION['Last_Name'] = $row['Last_Name'];
     //         $_SESSION['Ref_Code'] = $row['Ref_Code'];
     //        echo $row['First_Name'];
-           
+
 ?>
 <div class="text-center">
 <h2>LOGIN</h2>
